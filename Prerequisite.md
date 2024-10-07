@@ -610,19 +610,22 @@ https://target.com/hijacktoken.html:
 
 در واقع CORS یه راه‌حل امنیتی برای اینه که مرورگرها بفهمن کدوم Originها اجازه دارن از سرورهای مختلف(Cross-Origin) اطلاعات بگیرن. توی حالت عادی، مرورگرها به دلیل قوانین امنیتی، اجازه نمی‌دن سایت‌ها به اطلاعات سایت‌های دیگه دسترسی داشته باشن، مگر اینکه این دسترسی‌ها به صورت واضح توی هدرهای سرور مشخص شده باشه. CORS میاد مشخص می‌کنه کدوم سایت‌ها اجازه دارن از سرور درخواست بزنن و اطلاعات بگیرن.
 برای فهم عمیق تر دو مثال میزنم: 
+```domain
 A - https://api.target.com/user
 B - https://target.com/dashboard
+```
 همانطور که میدونیم دو endpoint بالا یعنی A و B هر دو Cross-Origin هستند و طبق SOP نباید بتواند origin B وقتی به A درخواست میزند و response را دریافت میکند بتواند اطلاعات را بگیرد ولی این عمل به واسطه ی CORS در سرور set شده است.
-
-ـCORS Important Header in HTTP Request:
+```http
+CORS Important Header in HTTP Request:
 Origin: domain.tld
-
-ـCORS Important Headers in HTTP Response:
+```
+```http
+CORS Important Headers in HTTP Response:
 ACCESS-CONTROL-ALLOW-ORIGIN: domain.tld
 ACCESS-CONTROL-ALLOW-CREDENTIAL: true
 ACCESS-CONTROL-ALLOW-METHODS:
 ACCESS-CONTROL-REQUEST-HEADER:
-
+```
 
 دو نوع درخواست اصلی توی CORS وجود داره:
 
@@ -633,7 +636,7 @@ ACCESS-CONTROL-REQUEST-HEADER:
 هدرهای مجاز: Accept, Accept-Language, Content-Type
 اگه از هدرهای اضافی مثل CSRF-Token یا JWT استفاده نشه، درخواست توی این دسته قرار می‌گیره.
 
-Preflight Request : 
+ـPreflight Request : 
 این درخواست قبل از درخواست اصلی فرستاده می‌شه تا سرور تأیید کنه که درخواست اجازه داره اجرا بشه. معمولاً برای درخواست‌هایی که هدرهای خاص دارن یا از متدهایی مثل PUT و OPTION استفاده می‌کنن، این نوع درخواست‌ها لازمه.
 
 سناریوی یک حمله با استفاده از CORS:
