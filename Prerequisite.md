@@ -276,7 +276,7 @@ example.com/search?query=something
 
 
   دسته‌بندی اصلیStatus Codes:
-<div>
+<div dir="ltr">
 1XX =>اطلاعات غیر قابل تاثیر در پردازش 
 2XX => موفقیت در درخواست
 3XX => Redirect 
