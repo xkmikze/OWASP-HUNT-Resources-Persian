@@ -522,7 +522,7 @@ example.com/search?query=something
 
 ـOrigin ترکیبی از سه بخش اصلی است:
 
-ـport - protocol - host
+port - protocol - host
 
 پروتکل (مثل http یا https)
 
@@ -778,10 +778,11 @@ https://target.com/hijacktoken.html:
 
 در واقع CORS یه راه‌حل امنیتی برای اینه که مرورگرها بفهمن کدوم Originها اجازه دارن از سرورهای مختلف(Cross-Origin) اطلاعات بگیرن. توی حالت عادی، مرورگرها به دلیل قوانین امنیتی، اجازه نمی‌دن سایت‌ها به اطلاعات سایت‌های دیگه دسترسی داشته باشن، مگر اینکه این دسترسی‌ها به صورت واضح توی هدرهای سرور مشخص شده باشه. CORS میاد مشخص می‌کنه کدوم سایت‌ها اجازه دارن از سرور درخواست بزنن و اطلاعات بگیرن.
 برای فهم عمیق تر دو مثال میزنم: 
-```domain
+
 A - https://api.target.com/user
+
 B - https://target.com/dashboard
-```
+
 همانطور که میدونیم دو endpoint بالا یعنی A و B هر دو Cross-Origin هستند و طبق SOP نباید بتواند origin B وقتی به A درخواست میزند و response را دریافت میکند بتواند اطلاعات را بگیرد ولی این عمل به واسطه ی CORS در سرور set شده است.
 CORS Important Header in HTTP Request:
 ```http
