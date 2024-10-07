@@ -276,13 +276,13 @@ example.com/search?query=something
 
 
   دسته‌بندی اصلیStatus Codes:
-
-ـ1XX =>اطلاعات غیر قابل تاثیر در پردازش 
-ـ2XX => موفقیت در درخواست
-ـ3XX => Redirect 
-ـ4XX => Client Side Error 
-ـ5XX => Server Side Error
-
+```plaintext
+1XX =>اطلاعات غیر قابل تاثیر در پردازش 
+2XX => موفقیت در درخواست
+3XX => Redirect 
+4XX => Client Side Error 
+5XX => Server Side Error
+```
 
 وضعیت‌های رایج و مهم:
 ـ1. 200 OK - همه‌چی عالیه
@@ -385,38 +385,40 @@ example.com/search?query=something
 مثال‌های ساده:
 
 ـSame Origin:
-
+```domain
 https://example.com:443/index.php
 https://example.com/dashboard
-
+```
 
 این دو URL Same Origin هستند زیرا پروتکل، دامنه و پورت یکی است.
 
 ـCross Origin به خاطر دامنه متفاوت:
-
+```domain
 https://target.com/index.php
 https://example.com/home
-
+```
 این دو URL Cross Origin هستند چون دامنه‌ها متفاوت است.
 
 ـCross Origin به خاطر پروتکل متفاوت:
-
+```domain
 http://example.com/home
 https://example.com/home
+```
 این دو URL Cross Origin هستند چون پروتکل‌ها (http و https) متفاوت است.
 
 ـCross Origin به خاطر پورت متفاوت:
-
+```domain
 http://example.com:8080
 http://example.com
+```
 
 این دو URL Cross Origin هستند چون پورت‌ها متفاوت است.
 
 ـCross Origin به خاطر دامنه متفاوت:
-
+```domain
 https://www.example.com/home/index.php
 https://example.com/dashboard
-
+```
 این دو URL Cross Origin هستند چون دامنه‌ها متفاوت است.
 
 چطور SOP عمل می‌کند؟
