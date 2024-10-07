@@ -276,13 +276,13 @@ example.com/search?query=something
 
 
   دسته‌بندی اصلیStatus Codes:
-```plaintext
+<div>
 1XX =>اطلاعات غیر قابل تاثیر در پردازش 
 2XX => موفقیت در درخواست
 3XX => Redirect 
 4XX => Client Side Error 
 5XX => Server Side Error
-```
+</div>
 
 وضعیت‌های رایج و مهم:
 ـ1. 200 OK - همه‌چی عالیه
