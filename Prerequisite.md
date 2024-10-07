@@ -277,6 +277,7 @@ example.com/search?query=something
 
   دسته‌بندی اصلیStatus Codes:
 <div dir="ltr">
+ 
 1XX =>اطلاعات غیر قابل تاثیر در پردازش 
  
 2XX => موفقیت در درخواست
@@ -294,6 +295,7 @@ example.com/search?query=something
 
 مثال ساده:
 وقتی یه صفحه از وب‌سایت رو می‌خوای ببینی، با GET درخواست می‌دی که اون صفحه رو برات بیاره. یا مثلاً وقتی می‌خوای توی یه فرم جستجو کنی، می‌تونی با GET پارامترهای جستجو رو توی URL بفرستی:
+
 example.com/search?query=something
 
 ـ2. 201 Created - ساخته شد
@@ -397,32 +399,35 @@ https://example.com/dashboard
 این دو URL Same Origin هستند زیرا پروتکل، دامنه و پورت یکی است.
 
 ـCross Origin به خاطر دامنه متفاوت:
-```domain
+
 https://target.com/index.php
+
 https://example.com/home
-```
+
 این دو URL Cross Origin هستند چون دامنه‌ها متفاوت است.
 
 ـCross Origin به خاطر پروتکل متفاوت:
-```domain
+
 http://example.com/home
+
 https://example.com/home
-```
+
 این دو URL Cross Origin هستند چون پروتکل‌ها (http و https) متفاوت است.
 
 ـCross Origin به خاطر پورت متفاوت:
-```domain
+
 http://example.com:8080
+
 http://example.com
-```
+
 
 این دو URL Cross Origin هستند چون پورت‌ها متفاوت است.
 
 ـCross Origin به خاطر دامنه متفاوت:
-```domain
 https://www.example.com/home/index.php
+
 https://example.com/dashboard
-```
+
 این دو URL Cross Origin هستند چون دامنه‌ها متفاوت است.
 
 چطور SOP عمل می‌کند؟
@@ -506,7 +511,7 @@ location.hash
 xhr.responseText
 
 ـDOM Sink:
- جاییه که اطلاعات کاربر اجرا میشه. مثلاً وقتی یه اسکریپت به مرورگر میگه چیزی رو توی صفحه نمایش بده یا یه چیزی رو تغییر بده، از DOM Sink استفاده میشه.
+جاییه که اطلاعات کاربر اجرا میشه. مثلاً وقتی یه اسکریپت به مرورگر میگه چیزی رو توی صفحه نمایش بده یا یه چیزی رو تغییر بده، از DOM Sink استفاده میشه.
 
 مثال‌هایی از DOM Sink:
 document.write()
@@ -646,6 +651,7 @@ ACCESS-CONTROL-REQUEST-HEADER:
 این درخواست قبل از درخواست اصلی فرستاده می‌شه تا سرور تأیید کنه که درخواست اجازه داره اجرا بشه. معمولاً برای درخواست‌هایی که هدرهای خاص دارن یا از متدهایی مثل PUT و OPTION استفاده می‌کنن، این نوع درخواست‌ها لازمه.
 
 سناریوی یک حمله با استفاده از CORS:
+
 فرض کن ما دو دامنه داریم:
 
 ```http
