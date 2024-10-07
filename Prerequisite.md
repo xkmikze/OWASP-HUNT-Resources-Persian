@@ -615,12 +615,12 @@ A - https://api.target.com/user
 B - https://target.com/dashboard
 ```
 همانطور که میدونیم دو endpoint بالا یعنی A و B هر دو Cross-Origin هستند و طبق SOP نباید بتواند origin B وقتی به A درخواست میزند و response را دریافت میکند بتواند اطلاعات را بگیرد ولی این عمل به واسطه ی CORS در سرور set شده است.
-```http
 CORS Important Header in HTTP Request:
+```http
 Origin: domain.tld
 ```
-```http
 CORS Important Headers in HTTP Response:
+```http
 ACCESS-CONTROL-ALLOW-ORIGIN: domain.tld
 ACCESS-CONTROL-ALLOW-CREDENTIAL: true
 ACCESS-CONTROL-ALLOW-METHODS:
@@ -647,23 +647,35 @@ ACCESS-CONTROL-REQUEST-HEADER:
 سرور B به صورت اشتباهی پیکربندی شده و اجازه میده دامنه‌های دیگه، مثل A، ازش درخواست بزنن. مثلاً وقتی از دامنه A یه درخواست به B فرستاده بشه، سرور B توی هدرهای پاسخ خودش به شکل زیر عمل می‌کنه:
 
 درخواست ارسال شده:
+```http
 Origin: attacker.tld
+```
 پاسخ سرور B:
+```http
 Access-Control-Allow-Origin: attacker.tld
 Access-Control-Allow-Credentials: true
+```
 این یعنی سرور B به درخواست‌های دامنه A اجازه میده و حتی کوکی‌ها و اطلاعات حساس رو هم با درخواست می‌فرسته. اینجا CORS به اشتباه پیکربندی شده و امکان داره هکر از این ضعف استفاده کنه و اطلاعاتی مثل توکن یا session کاربر رو بدزده.
 
 مثالی از پیکربندی درست و نادرست CORS:
 فرض کن توی مرورگر درخواست زیر رو داری:
+```http
 Origin: test.com
+```
 اگه سرور اینطوری پاسخ بده:
+
+```http
 Access-Control-Allow-Origin: test.com
 Access-Control-Allow-Credentials: true
+```
 این یعنی سرور به سایت test.com اجازه داده تا بهش دسترسی داشته باشه و اطلاعات حساس مثل کوکی‌ها رو هم می‌فرسته.
 
 ولی اگه اینطوری باشه:
+
+```http
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Credentials: true
+```
 مرورگر خودش جلوی فرستادن کوکی‌ها رو می‌گیره، چون نباید وقتی هدر Allow-Origin برابر با * هست، کوکی‌ها رو بفرسته. به عبارت دیگه، وقتی Credentials برابر با true باشه، Allow-Origin نباید * باشه.
 
 آسیب‌پذیری‌های ناشی از CORS Misconfiguration:
