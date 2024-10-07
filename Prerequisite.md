@@ -278,9 +278,13 @@ example.com/search?query=something
   دسته‌بندی اصلیStatus Codes:
 <div dir="ltr">
 1XX =>اطلاعات غیر قابل تاثیر در پردازش 
+ 
 2XX => موفقیت در درخواست
+
 3XX => Redirect 
+
 4XX => Client Side Error 
+
 5XX => Server Side Error
 </div>
 
@@ -385,10 +389,10 @@ example.com/search?query=something
 مثال‌های ساده:
 
 ـSame Origin:
-```domain
+
 https://example.com:443/index.php
+
 https://example.com/dashboard
-```
 
 این دو URL Same Origin هستند زیرا پروتکل، دامنه و پورت یکی است.
 
