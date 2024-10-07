@@ -1,6 +1,5 @@
 <div dir="rtl">
-<h1>General Prerequisite</h1> 
----
+<h1>General Prerequisite</h1>
 <h2>Cryptography</h2>
 رمزنگاری چیه؟
 
@@ -256,6 +255,7 @@ example.com/search?query=something
 ـPUT اطلاعاتی که از قبل وجود دارن رو کاملاً جایگزین می‌کنه.
 
 
+
 ـ4. PATCH
 
 کاری که انجام میده:
@@ -265,6 +265,7 @@ example.com/search?query=something
 
 مثال ساده:
 اگه فقط بخوای اسم کاربری رو تغییر بدی، درخواست PATCH می‌فرسته تا فقط همون بخش رو آپدیت کنه و بقیه اطلاعات سر جاش بمونن.
+
 
 
 ـ5. DELETE
@@ -278,6 +279,7 @@ example.com/search?query=something
 وقتی می‌خوای یه پست یا یه چیزی رو از سرور پاک کنی، درخواست DELETE می‌فرستی.
 
 
+
 ـ6. HEAD
 
 کاری که انجام میده:
@@ -287,6 +289,7 @@ example.com/search?query=something
 
 مثال ساده:
 اگه بخوایم فقط چک کنیم که یه صفحه وجود داره یا نه، بدون اینکه کل محتوا رو دانلود کنیم، از HEAD استفاده می‌کنیم.
+
 
 
 ـ7. OPTIONS
@@ -300,6 +303,7 @@ example.com/search?query=something
 اگه بخوایم بفهمیم چه متدهایی (GET، POST و غیره) برای یه URL خاص پشتیبانی می‌شه، از OPTIONS استفاده می‌کنیم.
 
 
+
 ـ8. CONNECT
 
 کاری که انجام میده:
@@ -309,6 +313,7 @@ example.com/search?query=something
 
 مثال ساده:
 وقتی می‌خوای یه اتصال امن مثل HTTPS راه بندازی، مرورگر از CONNECT استفاده می‌کنه.
+
 
 
 ـ9. TRACE
